@@ -1,3 +1,22 @@
+# Computer Vision and GUI
 opencv-python >= 4.5.1.48
-open3d
+numpy >= 1.21.0
+
+# 3D Visualization
+open3d >= 0.15.0
+matplotlib >= 3.5.0
+
+# Alternative 3D visualization for Jetson compatibility
+# If open3d fails, matplotlib provides 3D plotting capabilities
+
+# RealSense Camera Support
+pyrealsense2 >= 2.53.0
+
+# MediaPipe for Pose Detection
+mediapipe >= 0.10.0
+
+# DepthAI (existing requirement)
 depthai >= 2.10
+
+# Additional utilities
+scipy >= 1.7.0
