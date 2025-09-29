@@ -28,7 +28,7 @@ Jetson AGX Orin (JetPack 5.1.2) と RealSense D455 を使用したMediaPipeに�
 
 ### 1. リポジトリのクローン
 ```bash
-cd /home/tamlab/person_tracker_ws/src/depthai_blazepose
+cd /home/tamlab/ws_whill/src/depthai_blazepose
 ```
 
 ### 2. 自動セットアップスクリプトの実行

@@ -59,14 +59,12 @@ class PoseClassifier:
         
         # (33, 4)形式の場合
         elif keypoints_3d.shape == (33, 4):
-            # x, y, z, visibility座標を分離
-            x_coords = keypoints_3d[:, 0]
-            y_coords = keypoints_3d[:, 1]
-            z_coords = keypoints_3d[:, 2]
-            visibility = keypoints_3d[:, 3]
-            
-            # 特徴量ベクトルを構築（x1, x2, ..., x33, y1, y2, ..., y33, z1, z2, ..., z33, v1, v2, ..., v33）
-            features = np.concatenate([x_coords, y_coords, z_coords, visibility]).reshape(1, -1)
+            # 特徴量ベクトルを構築（キーポイント順: x1,y1,z1,v1, x2,y2,z2,v2, ...）
+            features_list = []
+            for i in range(33):
+                features_list.extend([keypoints_3d[i, 0], keypoints_3d[i, 1],
+                                     keypoints_3d[i, 2], keypoints_3d[i, 3]])
+            features = np.array(features_list).reshape(1, -1)
         
         else:
             raise ValueError(f"Unsupported keypoints shape: {keypoints_3d.shape}")
